@@ -63,7 +63,7 @@ function findB2G (opts, callback) {
         
           var matches = matchSimulator(extension);
           if (matches && matches[1]) {
-            var version = matches[1].replace('_','.')
+            var version = matches[1].replace('_','.');
 
             // if we want a specific version, skip it
             if (opts.version && opts.version != version)
@@ -71,7 +71,8 @@ function findB2G (opts, callback) {
 
             b2g_profiles.push({
               version: version,
-              path: path.join(extensions_path, extension, B2G_BIN)
+              path: path.join(extensions_path, extension, B2G_BIN),
+              profile: path.join(extensions_path, extension, 'profile')
             });
           }
 
