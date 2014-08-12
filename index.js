@@ -71,7 +71,7 @@ function findB2G (opts, callback) {
 
             b2g_profiles.push({
               version: version,
-              path: path.join(extensions_path, extension, B2G_BIN),
+              bin: path.join(extensions_path, extension, B2G_BIN),
               profile: path.join(extensions_path, extension, 'profile')
             });
           }

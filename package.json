@@ -1,6 +1,6 @@
 {
   "name": "moz-find-b2g",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Find bin files for B2G simulators",
   "main": "index.js",
   "scripts": {
