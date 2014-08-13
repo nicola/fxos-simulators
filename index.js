@@ -43,7 +43,6 @@ function findB2G (opts, callback) {
     opts = {};
   }
 
-
   var b2g_profiles = [];
 
   fs.readdir(FX_PROFILES, function (err, profiles) {
@@ -59,7 +58,7 @@ function findB2G (opts, callback) {
       // Iterate in each extension to find simulators
       fs.readdir(extensions_path, function(err, extensions) {
         
-        async.each(extensions, function(extension, callback) {
+        async.each(extensions, function(extension, done) {
         
           var matches = matchSimulator(extension);
           if (matches && matches[1]) {
@@ -67,7 +66,7 @@ function findB2G (opts, callback) {
 
             // if we want a specific version, skip it
             if (opts.version && opts.version != version)
-              return callback(null);
+              return done(null);
 
             b2g_profiles.push({
               version: version,
@@ -76,7 +75,7 @@ function findB2G (opts, callback) {
             });
           }
 
-          callback(null);
+          done(null);
         }, next);
 
       });
