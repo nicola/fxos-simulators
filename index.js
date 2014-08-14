@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 var path = require('path'),
   async = require('async'),
   fs = require('fs'),
@@ -81,6 +83,9 @@ function findB2G (opts, callback) {
       });
 
     }, function(err) {
+      if (b2g_profiles.length === 0)
+        err = new Error("No profile found");
+
       callback(err, b2g_profiles);
     });
 
