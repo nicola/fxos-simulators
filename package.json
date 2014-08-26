@@ -1,5 +1,5 @@
 {
-  "name": "moz-find-b2g",
+  "name": "fxos-simulators",
   "version": "0.1.0",
   "description": "Find bin files for B2G simulators",
   "main": "index.js",

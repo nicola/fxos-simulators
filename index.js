@@ -23,7 +23,7 @@ if (os == 'linux') {
   B2G_BIN = B2G_BIN_LINUX;
 }
 
-module.exports = findB2G;
+module.exports = findSimulators;
 
 function getUserHome() {
   return process.env[(process.platform == 'win32') ? 'USERPROFILE' : 'HOME'];
@@ -38,7 +38,7 @@ function extensionsExist(profile) {
   return fs.existsSync(extensions_path);
 }
 
-function findB2G (opts, callback) {
+function findSimulators (opts, callback) {
 
   if (typeof opts == 'function') {
     callback = opts;
@@ -96,7 +96,7 @@ function findB2G (opts, callback) {
 
 if (require.main === module) {
   (function() {
-    findB2G(function(err, b2gs){
+    findSimulators(function(err, b2gs){
       console.log("Firefox OS binaries found:", b2gs);
     });
   })();

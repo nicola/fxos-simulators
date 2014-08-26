@@ -1,5 +1,5 @@
-var findB2G = require('../index');
+var simulators = require('../index');
 
-findB2G({version:'2.0'}, function(err, b2gs) {
-  console.log(b2gs);
+simulators({version:'2.0'}, function(err, sims) {
+  console.log(sims);
 });
