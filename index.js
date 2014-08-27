@@ -93,11 +93,3 @@ function findSimulators (opts, callback) {
 
 
 }
-
-if (require.main === module) {
-  (function() {
-    findSimulators(function(err, b2gs){
-      console.log("Firefox OS binaries found:", b2gs);
-    });
-  })();
-}
