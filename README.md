@@ -7,8 +7,9 @@ Find Firefox OS simulators in your Firefox path
 ```sh
 # Library
 $ npm install fxos-simulators
+
 # Command line
-$ npm install fxos-simulators
+$ npm install -g fxos-simulators
 ```
 
 ## Usage
