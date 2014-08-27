@@ -7,11 +7,19 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Nicola Greco <me@nicola.io> (http://nicolagreco.com/)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nicola/fxos-simulators.git"
+  },
   "license": "ISC",
   "dependencies": {
     "async": "^0.9.0",
     "nomnom": "^1.8.0"
   },
+  "bugs": {
+    "url": "https://github.com/nicola/fxos-simulators/issues"
+  },
+  "homepage": "https://github.com/nicola/fxos-simulators",
   "bin": {
     "fxos-simulators": "./bin/fxos-simulators.js"
   }
