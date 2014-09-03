@@ -83,8 +83,11 @@ function findSimulators (opts, callback) {
       });
 
     }, function(err) {
-      if (b2g_profiles.length === 0)
-        err = new Error("No profile found");
+      if (b2g_profiles.length === 0) {
+        var message = "No simulator or profile found";
+        if (opts.sdk) message = message + " for sdk: " + opts.sdk;
+        err = new Error(message);
+      }
 
       callback(err, b2g_profiles);
     });
