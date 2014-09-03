@@ -64,14 +64,14 @@ function findSimulators (opts, callback) {
         
           var matches = matchSimulator(extension);
           if (matches && matches[1]) {
-            var version = matches[1].replace('_','.');
+            var sdk = matches[1].replace('_','.');
 
-            // if we want a specific version, skip it
-            if (opts.version && opts.version != version)
+            // if we want a specific sdk, skip it
+            if (opts.sdk && opts.sdk != sdk)
               return done(null);
 
             b2g_profiles.push({
-              version: version,
+              sdk: sdk,
               bin: path.join(extensions_path, extension, B2G_BIN),
               profile: path.join(extensions_path, extension, 'profile')
             });

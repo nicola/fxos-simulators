@@ -5,6 +5,10 @@ var path = require('path');
 var findSimulators = require('../index');
 
 var opts = require("nomnom")
+  .option('sdk', {
+    help: 'Version of FirefoxOS',
+    metavar: '<sdk version>'
+  })
   .option('version', {
     flag: true,
     help: 'Print version and exit',
@@ -18,6 +22,6 @@ var opts = require("nomnom")
 
 if (opts.version) return;
 
-findSimulators(function(err, b2gs){
+findSimulators(opts, function(err, b2gs){
   console.log(b2gs);
 });

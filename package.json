@@ -1,6 +1,6 @@
 {
   "name": "fxos-simulators",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Find bin files for FirefoxOS simulators",
   "main": "index.js",
   "scripts": {
@@ -22,5 +22,12 @@
   "homepage": "https://github.com/nicola/fxos-simulators",
   "bin": {
     "fxos-simulators": "./bin/fxos-simulators.js"
-  }
+  },
+  "keywords": [
+    "firefox",
+    "simulator",
+    "b2g",
+    "firefoxos",
+    "fxos"
+  ]
 }
