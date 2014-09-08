@@ -18,9 +18,11 @@ var table = new Table({
 });
 
 var opts = require("nomnom")
-  .option('sdk', {
+  .option('release', {
     help: 'Version of FirefoxOS',
-    metavar: '<sdk version>'
+    metavar: '<release version>',
+    type: 'string',
+    list: true
   })
   .option('json', {
     flag: true,
@@ -42,11 +44,11 @@ if (opts.version) return;
 findSimulators(opts, function(err, b2gs){
   if (opts.json) return console.log(b2gs);
 
-  var header = ['SDK', 'BIN'];
+  var header = ['RELEASE', 'BIN'];
   table.push(header);
 
   b2gs.forEach(function(b2g) {
-    var row = [b2g.sdk, b2g.bin.replace(getUserHome(), '~')];
+    var row = [b2g.release, b2g.bin.replace(getUserHome(), '~')];
     table.push(row);
   });
 

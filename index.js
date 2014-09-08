@@ -64,14 +64,14 @@ function findSimulators (opts, callback) {
         
           var matches = matchSimulator(extension);
           if (matches && matches[1]) {
-            var sdk = matches[1].replace('_','.');
+            var release = matches[1].replace('_','.');
 
-            // if we want a specific sdk, skip it
-            if (opts.sdk && opts.sdk != sdk)
+            // if we want a specific release, skip it
+            if (opts.release && opts.release.indexOf(release) < 0)
               return done(null);
 
             b2g_profiles.push({
-              sdk: sdk,
+              release: release,
               bin: path.join(extensions_path, extension, B2G_BIN),
               profile: path.join(extensions_path, extension, 'profile')
             });
@@ -85,7 +85,7 @@ function findSimulators (opts, callback) {
     }, function(err) {
       if (b2g_profiles.length === 0) {
         var message = "No simulator or profile found";
-        if (opts.sdk) message = message + " for sdk: " + opts.sdk;
+        if (opts.release) message = message + " for release: " + opts.release.join(',');
         err = new Error(message);
       }
 
