@@ -44,6 +44,11 @@ function findSimulators (opts, callback) {
     callback = opts;
     opts = {};
   }
+  if (opts.release) {
+    opts.release = opts.release.map(function(r) {
+      return String(r);
+    });
+  }
 
   var b2g_profiles = [];
 
@@ -83,12 +88,6 @@ function findSimulators (opts, callback) {
       });
 
     }, function(err) {
-      if (b2g_profiles.length === 0) {
-        var message = "No simulator or profile found";
-        if (opts.release) message = message + " for release: " + opts.release.join(',');
-        err = new Error(message);
-      }
-
       callback(err, b2g_profiles);
     });
 
